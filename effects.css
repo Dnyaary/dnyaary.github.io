@@ -1,0 +1,540 @@
+/* ===== RIPPLE EFFECTS ===== */
+.ripple-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple-effect::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(0, 212, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.ripple-effect:active::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* ===== REFLECTION EFFECTS ===== */
+.reflection-effect {
+  position: relative;
+}
+
+.reflection-effect::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 212, 255, 0.1) 0%,
+    transparent 50%
+  );
+  transform: scaleY(-1);
+  opacity: 0;
+  transition: opacity var(--transition-medium);
+}
+
+.reflection-effect:hover::after {
+  opacity: 1;
+}
+
+/* ===== REACTIVE LIGHTING ===== */
+.reactive-lighting {
+  position: relative;
+  transition: all var(--transition-medium);
+}
+
+.reactive-lighting::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(0, 212, 255, 0.1) 0%,
+    transparent 50%
+  );
+  opacity: 0;
+  transition: opacity var(--transition-medium);
+  pointer-events: none;
+}
+
+.reactive-lighting:hover::before {
+  opacity: 1;
+}
+
+/* ===== NEON GLOW EFFECTS ===== */
+.neon-glow {
+  text-shadow: 
+    0 0 5px currentColor,
+    0 0 10px currentColor,
+    0 0 15px currentColor,
+    0 0 20px var(--electric-blue),
+    0 0 35px var(--electric-blue),
+    0 0 40px var(--electric-blue);
+  animation: neon-flicker 2s ease-in-out infinite alternate;
+}
+
+@keyframes neon-flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    text-shadow: 
+      0 0 5px currentColor,
+      0 0 10px currentColor,
+      0 0 15px currentColor,
+      0 0 20px var(--electric-blue),
+      0 0 35px var(--electric-blue),
+      0 0 40px var(--electric-blue);
+  }
+  20%, 24%, 55% {
+    text-shadow: none;
+  }
+}
+
+/* ===== CYBERPUNK GRID ===== */
+.cyberpunk-grid {
+  position: relative;
+  background-image: 
+    linear-gradient(rgba(0, 212, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: grid-move 20s linear infinite;
+}
+
+@keyframes grid-move {
+  0% { background-position: 0 0; }
+  100% { background-position: 50px 50px; }
+}
+
+/* ===== DISTORTION EFFECTS ===== */
+.distortion-effect {
+  position: relative;
+  filter: url('#distortion-filter');
+}
+
+.distortion-wave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    transparent 40%,
+    rgba(0, 212, 255, 0.1) 50%,
+    transparent 60%
+  );
+  animation: wave-distortion 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes wave-distortion {
+  0%, 100% { transform: translateX(-100%) skewX(0deg); }
+  50% { transform: translateX(100%) skewX(15deg); }
+}
+
+/* ===== CHROMATIC ABERRATION ===== */
+.chromatic-aberration {
+  position: relative;
+}
+
+.chromatic-aberration::before,
+.chromatic-aberration::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.chromatic-aberration::before {
+  background: var(--intense-red);
+  transform: translateX(-2px);
+  opacity: 0.5;
+}
+
+.chromatic-aberration::after {
+  background: var(--neon-cyan);
+  transform: translateX(2px);
+  opacity: 0.5;
+}
+
+/* ===== ENERGY FIELD ===== */
+.energy-field {
+  position: relative;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 212, 255, 0.1) 0%,
+    rgba(0, 212, 255, 0.05) 50%,
+    transparent 100%
+  );
+  animation: energy-pulse 2s ease-in-out infinite;
+}
+
+@keyframes energy-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+/* ===== DIGITAL CORRUPTION ===== */
+.digital-corruption {
+  position: relative;
+  overflow: hidden;
+}
+
+.digital-corruption::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 2px,
+    rgba(255, 0, 64, 0.1) 2px,
+    rgba(255, 0, 64, 0.1) 4px
+  );
+  animation: corruption-glitch 0.3s infinite;
+  pointer-events: none;
+}
+
+@keyframes corruption-glitch {
+  0%, 90%, 100% { opacity: 0; }
+  5%, 85% { opacity: 1; }
+}
+
+/* ===== HOLOGRAPHIC INTERFERENCE ===== */
+.holographic-interference {
+  position: relative;
+}
+
+.holographic-interference::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    transparent 0%,
+    rgba(0, 255, 255, 0.1) 50%,
+    transparent 100%
+  );
+  animation: interference-scan 1.5s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes interference-scan {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+/* ===== ELECTROMAGNETIC FIELD ===== */
+.electromagnetic-field {
+  position: relative;
+}
+
+.electromagnetic-field::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    from 0deg,
+    transparent,
+    rgba(0, 212, 255, 0.1),
+    transparent,
+    rgba(255, 0, 64, 0.1),
+    transparent
+  );
+  animation: electromagnetic-rotation 10s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes electromagnetic-rotation {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ===== QUANTUM FLUCTUATION ===== */
+.quantum-fluctuation {
+  animation: quantum-shift 0.1s infinite;
+}
+
+@keyframes quantum-shift {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(0.5px, 0.5px); }
+  50% { transform: translate(-0.5px, 0.5px); }
+  75% { transform: translate(0.5px, -0.5px); }
+}
+
+/* ===== NEURAL NETWORK VISUALIZATION ===== */
+.neural-network {
+  position: relative;
+  background: radial-gradient(
+    circle at 20% 20%,
+    rgba(0, 212, 255, 0.1) 0%,
+    transparent 50%
+  ),
+  radial-gradient(
+    circle at 80% 80%,
+    rgba(255, 0, 64, 0.1) 0%,
+    transparent 50%
+  );
+}
+
+.neural-connection {
+  position: absolute;
+  width: 2px;
+  height: 100px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--electric-blue),
+    transparent
+  );
+  animation: neural-pulse 2s ease-in-out infinite;
+}
+
+@keyframes neural-pulse {
+  0%, 100% { opacity: 0.3; transform: scaleY(1); }
+  50% { opacity: 1; transform: scaleY(1.2); }
+}
+
+/* ===== VOID PORTAL ===== */
+.void-portal {
+  position: relative;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    var(--void-black) 0%,
+    var(--dark-gray) 50%,
+    var(--electric-blue) 100%
+  );
+  animation: void-rotation 20s linear infinite;
+}
+
+@keyframes void-rotation {
+  from { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.1); }
+  to { transform: rotate(360deg) scale(1); }
+}
+
+/* ===== REALITY FRACTURE ===== */
+.reality-fracture {
+  position: relative;
+  clip-path: polygon(
+    0% 0%,
+    100% 0%,
+    95% 50%,
+    100% 100%,
+    0% 100%,
+    5% 50%
+  );
+  animation: fracture-shift 3s ease-in-out infinite;
+}
+
+@keyframes fracture-shift {
+  0%, 100% {
+    clip-path: polygon(
+      0% 0%,
+      100% 0%,
+      95% 50%,
+      100% 100%,
+      0% 100%,
+      5% 50%
+    );
+  }
+  50% {
+    clip-path: polygon(
+      0% 0%,
+      100% 0%,
+      90% 30%,
+      100% 100%,
+      0% 100%,
+      10% 70%
+    );
+  }
+}
+
+/* ===== DIMENSIONAL RIFT ===== */
+.dimensional-rift {
+  position: relative;
+  background: linear-gradient(
+    45deg,
+    var(--void-black) 0%,
+    var(--electric-blue) 50%,
+    var(--void-black) 100%
+  );
+  background-size: 200% 200%;
+  animation: rift-movement 4s ease-in-out infinite;
+}
+
+@keyframes rift-movement {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* ===== CURSOR TRAIL EFFECT ===== */
+.cursor-trail {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(
+    circle,
+    var(--electric-blue) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  animation: trail-fade 0.5s ease-out forwards;
+}
+
+@keyframes trail-fade {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
+/* ===== INTERACTIVE HOVER STATES ===== */
+.interactive-element {
+  position: relative;
+  transition: all var(--transition-medium);
+  cursor: pointer;
+}
+
+.interactive-element::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(0, 212, 255, 0.1),
+    transparent
+  );
+  opacity: 0;
+  transition: opacity var(--transition-medium);
+}
+
+.interactive-element:hover::before {
+  opacity: 1;
+  animation: sweep 0.8s ease-in-out;
+}
+
+@keyframes sweep {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* ===== RESPONSIVE EFFECTS ===== */
+@media (max-width: 768px) {
+  .neon-glow {
+    text-shadow: 
+      0 0 3px currentColor,
+      0 0 6px currentColor,
+      0 0 9px var(--electric-blue);
+  }
+  
+  .energy-field {
+    animation-duration: 3s;
+  }
+  
+  .electromagnetic-field::before {
+    animation-duration: 15s;
+  }
+  
+  .quantum-fluctuation {
+    animation: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .chromatic-aberration::before,
+  .chromatic-aberration::after {
+    transform: none;
+    opacity: 0.3;
+  }
+  
+  .distortion-wave {
+    animation-duration: 5s;
+  }
+  
+  .holographic-interference::after {
+    animation-duration: 2s;
+  }
+}
+
+/* ===== ACCESSIBILITY ===== */
+@media (prefers-reduced-motion: reduce) {
+  .energy-field,
+  .electromagnetic-field::before,
+  .neural-connection,
+  .void-portal,
+  .reality-fracture,
+  .dimensional-rift,
+  .holographic-interference::after,
+  .distortion-wave {
+    animation: none;
+  }
+  
+  .quantum-fluctuation {
+    animation: none;
+  }
+  
+  .neon-glow {
+    animation: none;
+    text-shadow: 0 0 5px var(--electric-blue);
+  }
+}
+
+/* ===== HIGH CONTRAST MODE ===== */
+@media (prefers-contrast: high) {
+  .energy-field,
+  .neural-network {
+    background: none;
+  }
+  
+  .chromatic-aberration::before,
+  .chromatic-aberration::after {
+    opacity: 0;
+  }
+  
+  .digital-corruption::before {
+    opacity: 0;
+  }
+}
+
