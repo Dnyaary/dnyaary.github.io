@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dnyaary - Portal</title>
+    <script>
+        // Redireciona para a versão em português ou inglês
+        const userLang = navigator.language || navigator.userLanguage; 
+        if (userLang.startsWith('en')) {
+            window.location.href = './en/index.html';
+        } else {
+            window.location.href = './pt/index.html'; // Padrão para português
+        }
+    </script>
+</head>
+<body>
+    <!-- Conteúdo opcional de fallback enquanto redireciona -->
+    <p>Loading Dnyaary's portal...</p>
+</body>
+</html>
