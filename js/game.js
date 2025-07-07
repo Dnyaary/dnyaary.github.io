@@ -268,7 +268,7 @@ const Game = {
             const initialX = (bossCount > 1) ? -15 + (i * 30) : 0;
             boss.position.set(initialX, 5, -40);
             
-            boss.health = 2 + (20 * this.gameState.bossLevel);
+            boss.health = 100 + (20 * this.gameState.bossLevel);
             boss.points = 10000 * this.gameState.bossLevel;
             boss.attackCooldown = 3;
             boss.state = 'entering';
