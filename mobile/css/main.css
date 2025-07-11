@@ -1669,3 +1669,8 @@ body {
 
 @media (prefers-contrast: high) {
     }
+
+
+.cta-buttons a {
+  text-decoration: none;
+}
