@@ -7,15 +7,15 @@
     <link rel="icon" href="assets/images/favicon.png" type="image/png" />
 
     <script>
-        // Detecta se é um dispositivo mobile
+       
         const userAgent = navigator.userAgent || navigator.vendor || window.opera;
         const isMobile = /android|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent);
 
-        // Detecta o idioma preferencial do navegador para a subpasta
+        
         const userLang = navigator.language || navigator.userLanguage;
         const preferredLang = userLang.startsWith('en') ? 'en' : 'pt'; // 'en' ou 'pt'
 
-        // Redireciona com base no tipo de dispositivo e idioma
+        
         if (isMobile) {
             window.location.href = `mobile/${preferredLang}/index.html`;
         } else {
@@ -29,7 +29,7 @@
             align-items: center;
             min-height: 100vh;
             margin: 0;
-            background-color: #1a1a1a; /* Um fundo escuro para combinar com seu estilo */
+            background-color: #1a1a1a; 
             font-family: sans-serif;
             color: #ccc;
             text-align: center;
