@@ -148,7 +148,7 @@ body {
 }
 
 .digital-noise {
-    background-image: url('../assets/images/digital-noise-texture.png');
+    background-image: url('/assets/images/digital-noise-texture.png');
     background-size: 200px 200px;
     background-repeat: repeat;
     opacity: 0.03;
@@ -160,7 +160,7 @@ body {
 }
 
 .ethereal-fog {
-    background-image: url('../assets/images/ethereal-fog.png');
+    background-image: url('/assets/images/ethereal-fog.png');
     background-size: cover;
     background-position: center;
     opacity: 0.2;
