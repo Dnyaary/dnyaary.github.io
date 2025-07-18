@@ -164,6 +164,13 @@ blockquote footer {
     border-color: var(--cor-verde-militar);
 }
 
+.glitch-text[data-text="dead"] {
+  color: #ff0000;
+  text-shadow: 0 0 4px #8b0000, 0 0 2px #000;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
 @media (max-width: 768px) {
     .align-left, .align-right { text-align: left; margin-left: 0; margin-right: 0; }
     blockquote { padding-left: 15px; }
