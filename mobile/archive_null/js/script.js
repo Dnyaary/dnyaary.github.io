@@ -91,8 +91,8 @@ document.addEventListener('DOMContentLoaded', () => {
             en: "Every unspoken word is a <span class='glitch-text' data-text='shot'>shot</span> that echoes in the dark.<br> There are wounds that do not heal. We just organize them so they don’t overflow."
         },
         text5: {
-            pt: "Eu não estou <span class='glitch-text' data-text='dead'>dead.</span><br> Eu não estou <span class='glitch-text' data-text='dead'>dead.</span><br> O que está <span class='glitch-text' data-text='dead'>dead.</span> está <span class='glitch-text' data-text='dead'>dead.</span><br> O que está <span class='glitch-text' data-text='dead'>dead.</span> está <span class='glitch-text' data-text='dead'>dead.</span><br>",
-            en: "I’m not <span class='glitch-text' data-text='dead'>dead.</span><br> I’m not <span class='glitch-text' data-text='dead'>dead.</span><br> What’s <span class='glitch-text' data-text='dead'>dead.</span> is <span class='glitch-text' data-text='dead'>dead.</span><br> What’s <span class='glitch-text' data-text='dead'>dead.</span> is <span class='glitch-text' data-text='dead'>dead.</span><br>"
+            pt: "Eu não estou <span class='glitch-text' data-text='dead'>dead</span><br> Eu não estou <span class='glitch-text' data-text='dead'>dead</span><br> O que está <span class='glitch-text' data-text='dead'>dead</span> está <span class='glitch-text' data-text='dead'>dead</span><br> O que está <span class='glitch-text' data-text='dead'>dead</span> está <span class='glitch-text' data-text='dead'>dead</span><br>",
+            en: "I’m not <span class='glitch-text' data-text='dead'>dead</span><br> I’m not <span class='glitch-text' data-text='dead'>dead</span><br> What’s <span class='glitch-text' data-text='dead'>dead</span> is <span class='glitch-text' data-text='dead'>dead</span><br> What’s <span class='glitch-text' data-text='dead'>dead</span> is <span class='glitch-text' data-text='dead'>dead</span><br>"
         },
         text6: {
             pt: "Aqui não tem <span class='glitch-text' data-text='final'>final</span> feliz.<br> Só silêncio, poeira... e o que sobrou de mim.",
