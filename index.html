@@ -1,58 +1,56 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dnyaary</title>
+  <title>WHO???</title>
+  <link rel="stylesheet" href="style.css">
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #080808;
-      color: #ffffff;
-      font-family: Arial, Helvetica, sans-serif;
-      text-align: center;
-      padding: 24px;
-    }
-
-    main {
-      max-width: 700px;
-    }
-
-    h1 {
-      font-size: clamp(3rem, 10vw, 7rem);
-      letter-spacing: 0.12em;
-      margin-bottom: 16px;
-    }
-
-    p {
-      color: #aaaaaa;
-      font-size: 1.1rem;
-      line-height: 1.6;
-    }
-
-    .domain {
-      margin-top: 24px;
-      font-size: 0.9rem;
-      color: #666666;
-    }
-  </style>
 </head>
 
 <body>
-  <main>
-    <h1>DNYAARY</h1>
-    <p>Welcome to the void.</p>
-    <div class="domain">dnyaary.com</div>
+
+  <main class="hero">
+
+    <div class="overlay"></div>
+    <div class="text">
+
+      <span>IT IS STILL WATCHING.</span>
+
+    </div>
   </main>
+
+
+  <script>
+
+    const titles = [
+        "WHO???",
+        "WHERE ARE YOU?",
+        "I CAN SEE YOU."
+    ];
+
+    let currentTitle = 0;
+
+    function changeTitle()
+    {
+        let nextTitle;
+
+        do
+        {
+            nextTitle = Math.floor(Math.random() * titles.length);
+        } while (nextTitle === currentTitle);
+
+        currentTitle = nextTitle;
+        document.title = titles[currentTitle];
+
+        const nextChange = Math.random() * 30000 + 20000;
+
+        setTimeout(changeTitle, nextChange);
+    }
+    setTimeout(changeTitle, 10000);
+</script>
+
 </body>
 </html>
